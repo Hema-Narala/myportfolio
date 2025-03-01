@@ -37,14 +37,15 @@ html {
 
 /* all similar content styling codes */
 section {
-    padding: 100px 0;
+    padding: 100px 0;   /* 100px top & bottom, 0 left & right padding */
 }
 
 .max-width {
-    max-width: 1300px;
-    padding: 0 80px;
-    margin: auto;
+    max-width: 1300px;  /* The element cannot be wider than 1300px */
+    padding: 0 80px;    /* 0px top & bottom, 80px left & right padding */
+    margin: auto;       /* Centers the element horizontally */
 }
+
 
 .about,
 .projects,
@@ -101,7 +102,7 @@ section .title::after {
 .navbar {
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 999;   /* Higher z-index, appears on top */
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
@@ -318,7 +319,7 @@ section .title::after {
 .projects {
     background: #212121;
     color: #FBF5E5;
-    padding: 50px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
@@ -852,7 +853,7 @@ projects section styling
 } */
 
 /* footer section styling */
-footer {
+/* footer {
     background: #212121;
     padding: 15px 23px;
     color: #FBF5E5;
@@ -866,7 +867,7 @@ footer span a {
 
 footer span a:hover {
     text-decoration: underline;
-}
+} */
 
 
 /* responsive media query start */

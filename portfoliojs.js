@@ -1,34 +1,60 @@
-$(document).ready(function() {
-    $(window).scroll(function() {
-        // sticky navbar on scroll script
-        if (this.scrollY > 20) {
-            $('.navbar').addClass("sticky");
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", function () {
+        // Get the navbar element
+        let navbar = document.querySelector(".navbar");
+
+        // Sticky navbar logic
+        if (window.scrollY > 20) {
+            navbar.classList.add("sticky");
         } else {
-            $('.navbar').removeClass("sticky");
+            navbar.classList.remove("sticky");
         }
 
-        // scroll-up button show/hide script
-        if (this.scrollY > 500) {
-            $('.scroll-up-btn').addClass("show");
+        // Get the scroll-up button
+        let scrollUpBtn = document.querySelector(".scroll-up-btn");
+
+        // Show or hide scroll-up button based on scroll position
+        if (window.scrollY > 500) {
+            scrollUpBtn.classList.add("show");
         } else {
-            $('.scroll-up-btn').removeClass("show");
+            scrollUpBtn.classList.remove("show");
         }
     });
 
-    // slide-up script
-    $('.scroll-up-btn').click(function() {
-        $('html').animate({
-            scrollTop: 0
+    // Add click event to scroll-up button
+    document.querySelector(".scroll-up-btn").addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Enables smooth scrolling
         });
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
+    });
+    document.querySelectorAll(".navbar .menu li a").forEach(function (menuItem) {
+        menuItem.addEventListener("click", function () {
+            // Applying smooth scrolling behavior when clicking menu items
+            document.documentElement.style.scrollBehavior = "smooth";
+        });
     });
 
-    $('.navbar .menu li a').click(function() {
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
+    // toggle menu/navbar script
+    // Select the menu button and menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.querySelector(".navbar .menu");
+    const menuIcon = document.querySelector(".menu-btn i");
+
+    // Add a click event listener to the menu button
+    menuBtn.addEventListener("click", function() {
+        // Toggle the "active" class on the menu
+        menu.classList.toggle("active");
+
+        // Toggle the "active" class on the menu icon (to change the icon)
+        menuIcon.classList.toggle("active");
     });
 
+
+});
+
+
+$(document).ready(function() {
     // toggle menu/navbar script
     $('.menu-btn').click(function() {
         $('.navbar .menu').toggleClass("active");
@@ -74,7 +100,7 @@ $(document).ready(function() {
     });
 });
 
-//to move container from left to right in home section
+//to move container from right to left in home section
 document.addEventListener("DOMContentLoaded", function() {
     gsap.from("#home-content", { 
       x: 200,  // Moves from right (200px offset)
