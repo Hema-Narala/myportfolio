@@ -63,14 +63,14 @@ $(document).ready(function() {
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Student", "Developer", "Learner"],
+        strings: ["Learner","Developer","Programmer", ],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Python", "JavaScript","HTML","CSS","SQL"],
+        strings: [ "HTML", "CSS", "React.js", "React Native", "Expo", "Node.js", "Express.js", "MongoDB","SQL", "REST APIs", "Git", "GitHub", "Socket.IO", "Cloudinary", "Render", "Responsive Web Design","Python", "JavaScript", "Data Structures & Algorithms"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -174,11 +174,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function animateProgressBars() {
         const bars = document.querySelectorAll(".skills-content .right .line");
         bars.forEach((bar) => {
-            const percentage = bar.classList.contains("html") ? "95%" :
-                bar.classList.contains("css") ? "94%" :
-                    bar.classList.contains("js") ? "89%" :
-                        bar.classList.contains("python") ? "92%" :
-                            bar.classList.contains("sqlite") ? "87%" : "0%";
+            const percentage = bar.classList.contains("html") ? "65%" :
+                bar.classList.contains("css") ? "70%" :
+                    bar.classList.contains("js") ? "80%" :
+                        bar.classList.contains("python") ? "60%" :
+                            bar.classList.contains("sqlite") ? "80%" : "0%";
 
             bar.style.setProperty("--progress", percentage);
             bar.classList.add("animate");
